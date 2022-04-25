@@ -132,6 +132,11 @@ function colidiu(passaro, barreiras) {
     return colidiu
 }
 
+function resetarGame() {
+    const resetar = document.querySelector('.resetar')
+    resetar.classList.remove('escondido')
+}
+
 function FlappyBird() {
     let pontos = 0
 
@@ -156,6 +161,7 @@ function FlappyBird() {
 
             if(colidiu(passaro, barreiras)) {
                 clearInterval(temporizador)
+                resetarGame()
             }
         }, 20)
     }
